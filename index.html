@@ -1,0 +1,175 @@
+<!DOCtype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.5.0/css/all.min.css"/>
+    <link rel="stylesheet" href="crud.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.8.2/jspdf.plugin.autotable.min.js"></script>    <script src="crud.js"></script>
+</head>
+<body>
+    
+        <div id="marksheet">
+            <h1 id="title">Marksheet Creator</h1>
+            <div id="card">
+                <form id="marksheet-form">
+                    
+
+                    <div id="form-group">
+                        <div>
+                            <label>School Logo</label>
+                            <input name="schoollogo"  type="file" accept="image/*" id="schoolpic-input"/>
+                        </div>
+                       
+                        <div>
+                            <label >School Name</label>
+                            <input  name="schoolname" placeholder="School Name" type="text" id="school_name"/>
+                        </div>
+     
+                        <div>
+                            <label>Tag Line</label>
+                            <input  name="tagline" placeholder="Tag Line" type="text" id="tagline"/>
+                        </div>
+
+                        <div>
+                            <label>Tag Line</label>
+                            <input value="MARKSHEET OF ...... " name="tagline1" placeholder="Tag Line" type="text" id="tagline1"/>
+                        </div>
+                    </div>
+
+                    <div id="form-group">
+                        <div>
+                            <label>Student's Image</label>
+                            <input name="studentimage"  type="file" accept="image/*" id="pic-input"/>
+                        </div>
+                       
+                        <div>
+                            <label>Student's Name</label>
+                            <input name="fullName" placeholder="Student's Name" type="text" id="student_name" />
+                        </div>
+     
+                        <div>
+                            <label>Father's Name</label>
+                            <input name="fatherName" placeholder="Father's Name" type="text" id="father_name"/>
+                        </div>
+                    </div>
+
+
+                    
+
+                    <div id="form-group">
+                        <div>
+                            <label>Roll.No</label>
+                            <input  name="rollno" placeholder="Roll.No" type="number"  id="rollinput"/>
+                        </div>
+                       
+                        <div>
+                            <label>Class</label>
+                            <input name="class" placeholder="Class" type="text" id="classinput"/>
+                        </div>
+     
+                        <div>
+                            <label>Date-of-Birth</label>
+                            <input name="dob"  type="date" id="dobinput"/>
+                        </div>
+
+                        <div>
+                            <label>Gender</label>
+                            <select value="male" name="gender" id="genderinput">
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                                <option value="other">Others</option>
+                                </select>
+                        </div>
+                    </div>
+
+                    
+                    <button id="add_subjects" type="button">
+                        <i class="fa fa-plus"></i>
+                         Add Subject
+                    </button>
+
+                     <div id="dynamic-area">
+                        </div>
+
+                    <button  id="generate" type="submit">
+                        <i class="fa fa-download"></i>
+                        Download Marksheet
+                    </button>
+                </form>
+               
+            </div>
+
+
+            <div id="card">
+                <table width="95%">
+                    <tr>
+                        <td  width="150" height="120">
+                            <img  width="120" id="school-pics">
+                        </td>
+                            <th id="school-name" width="100%">School Name</th>
+                    </tr>
+                    </table>
+
+                    <table width="95%">
+                        <tr>
+                            <td  width="150" rowspan="4">
+                                <img src="images\avatar.webp" width="120"  id="pics">
+                            </td>
+                                
+                        </tr>
+                        <tr>
+                            <th width="120">Student's Name</th>
+                            <td id="studentname" width="200"></td>
+                            <th width="100">Father's Name</th>
+                            <td  id="fathername" width="200"></td>
+                            </tr>
+
+                            <tr>
+                                <th width="100">Roll.No</th>
+                                <td id="rollno"></td>
+                                <th width="100">Class</th>
+                                <td id="class"></td>
+                                </tr>
+
+                            <tr>
+                                <th width="100">DOB</th>
+                                <td id="dob">00-00-00</td>
+                                <th width="100">Gender</th>
+                                <td id="gender"></td>
+                                </tr>
+                        </table>
+               
+
+                <table  width="95%" id="dynamicarea" >
+                   
+                    <tr>
+                        <th >Subjects</th>
+                        <th >Fullmarks</th>
+                        <th colspan="1">Obtain Mark</th>
+                       </tr>
+
+                   
+
+                </table>
+
+                   <table  width="95%" id="score">
+                    <tr>
+                        <th colspan="3" align="right">Total Marks</th>
+                        <td align="center" id="total-mark"></td>
+                       </tr>
+
+                   <tr>
+                    <th  align="right">Grade</th>
+                    <td align="center" id="grade"></td>
+                    <th  align="right">Percentage</th>
+                    <td align="center" id="percentage"></td>
+                   </tr>
+                    </table>
+
+                    <p align="center" color="red"><i class="fa fa-copyright">This is not for personal use..</i></p>
+            </div>
+        </div>
+</body>
+</html>
